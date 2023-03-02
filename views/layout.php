@@ -12,7 +12,7 @@
 
 
 
-    <title>DevWebCamp - <?php echo $titulo; ?></title>
+    <title>Prinzedom Records - <?php echo $titulo; ?></title>
 
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
