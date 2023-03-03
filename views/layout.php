@@ -17,6 +17,33 @@
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
     <body>
+
+
+
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="homeLay loading">
+                <div class="loading-text">
+                    <span class="loading-text-words">L</span>
+                    <span class="loading-text-words">O</span>
+                    <span class="loading-text-words">A</span>
+                    <span class="loading-text-words">D</span>
+                    <span class="loading-text-words">I</span>
+                    <span class="loading-text-words">N</span>
+                    <span class="loading-text-words">G</span>
+                </div>
+            </div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+
+    
+        
+
+    
+    
         <?php 
             include_once __DIR__ .'/templates/header.php';
             echo $contenido;

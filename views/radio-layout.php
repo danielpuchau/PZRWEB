@@ -15,7 +15,35 @@
 
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
-    <body>
+    <body class=raaadio>
+
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="radio loading">
+                <div class="loading-text">
+                    <span class="loading-text-words">C</span>
+                    <span class="loading-text-words">A</span>
+                    <span class="loading-text-words">R</span>
+                    <span class="loading-text-words">G</span>
+                    <span class="loading-text-words">A</span>
+                    <span class="loading-text-words">N</span>
+                    <span class="loading-text-words">D</span>
+                    <span class="loading-text-words">O</span>
+                    <span class="loading-text-words"> </span>
+                    <span class="loading-text-words">R</span>
+                    <span class="loading-text-words">A</span>
+                    <span class="loading-text-words">D</span>
+                    <span class="loading-text-words">I</span>
+                    <span class="loading-text-words">O</span>
+
+                </div>
+            </div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+
         <?php 
             include_once __DIR__ .'/templates/radio-header.php';
             echo $contenido;

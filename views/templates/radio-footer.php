@@ -28,6 +28,14 @@
 
         <script>
 
+        const loader = document.querySelector(".loading");
+
+        window.addEventListener('load',function(){
+            setTimeout(() => {
+                loader.classList.remove("radio");
+            }, 4000); 
+            
+        });
 
 
 
