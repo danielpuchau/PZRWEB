@@ -17,7 +17,7 @@
         </div> 
 
         <nav class="header__navegacion-principal"> <!-- main-menu -->
-            <a href="#/" id="boton5">Home</a>
+            <a href="#/" id="boton5">Prinzedom Home</a>
             <a href="#/releases" id="boton2">Referencias</a>
             <a href="#/family" id="boton4">Family</a>
             <a href="#/cult" id="boton3">Cult</a>

@@ -17,10 +17,10 @@
         </div> 
 
         <nav class="header__navegacion-principal"> <!-- main-menu -->
-        <a href="/index" id="boton5">Home</a>
-            <a href="/index#/releases" id="boton2">Referencias</a>
+        <a href="/index" id="boton5">Prinzedom Home</a>
             <a href="/index#/family" id="boton4">Family</a>
             <a href="/index#/cult" id="boton3">Cult</a>
+            <a href="/index#/releases" id="boton2">Referencias</a>
             <a href="radio" id="boton2"> Prinzedom Radio &#8599; </a>
             
             
