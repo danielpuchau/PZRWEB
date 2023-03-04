@@ -39,9 +39,32 @@
         <p class="formulario__texto">Imagen Actual:</p>
         <div class="formulario__imagen">
             <picture>
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/colaboradores/' . $colaborador->imagen; ?>.webp" type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/colaboradores/' . $colaborador->imagen; ?>.png" type="image/png">
-                <img src="<?php echo $_ENV['HOST'] . '/img/colaboradores/' . $colaborador->imagen; ?>.png" alt="Imagen Programa">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/coronas/' . $colaborador->imagen; ?>.webp" type="image/webp">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/coronas/' . $colaborador->imagen; ?>.png" type="image/png">
+                <img src="<?php echo $_ENV['HOST'] . '/img/coronas/' . $colaborador->imagen; ?>.png" alt="Imagen Programa">
+            </picture>
+        </div>
+
+    <?php } ?>
+
+
+    <div class="formulario__campo">
+        <label for="imagen2" class="formulario__label">Imagen Peña</label>
+        <input
+            type="file"
+            class="formulario__input formulario__input--file"
+            id="imagen2"
+            name="imagen2"
+        >
+    </div>
+
+    <?php if(isset($colaborador->imagen_actual2)) { ?>
+        <p class="formulario__texto">Imagen Peña Actual:</p>
+        <div class="formulario__imagen">
+            <picture>
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/coronas/' . $colaborador->imagen2; ?>.webp" type="image/webp">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/coronas/' . $colaborador->imagen2; ?>.jpg" type="image/jpg">
+                <img src="<?php echo $_ENV['HOST'] . '/img/coronas/' . $colaborador->imagen2; ?>.jpg" alt="Imagen Programa">
             </picture>
         </div>
 
@@ -52,21 +75,6 @@
 
 <fieldset class="formulario__fieldset">
     <legend class="formulario__legend">Redes Sociales</legend>
-
-    <div class="formulario__campo">
-        <div class="formulario__contenedor-icono">
-            <div class="formulario__icono">
-                <i class="fa-brands fa-facebook"></i>
-            </div>
-            <input
-                type="text"
-                class="formulario__input--sociales"
-                name="facebook"
-                placeholder="Facebook"
-                value="<?php echo $colaborador->facebook ?? ''; ?>"
-            >
-        </div>
-    </div>
 
     
     <div class="formulario__campo">

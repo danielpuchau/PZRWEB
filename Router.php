@@ -59,11 +59,12 @@ class Router
 
             include_once __DIR__ . '/views/layout.php';
 
-        } if(str_contains($url_actual, '/radio')) {
+        } if(str_contains($url_actual, '/pzrradio')) {
             
             include_once __DIR__ . '/views/radio-layout.php';
             
             /* include_once __DIR__ . '/views/radio-layout.php'; */
         }
+        
     }
 }

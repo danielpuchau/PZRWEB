@@ -2,7 +2,6 @@
 
 namespace Controllers;
 
-use Classes\Paginacion;
 use Model\Cartela;
 use MVC\Router;
 
@@ -13,12 +12,12 @@ class CartelaController {
             header('Location: /login');
         }
        
-        $cartelas = Cartela::all();
+        $cartela = Cartela::all();
     
 
         $router->render('admin/cartela/index', [
             'titulo' => 'Cartela',
-            'cartelas' => $cartelas
+            'cartela' => $cartela
         ]);
 
     }
@@ -30,6 +29,7 @@ class CartelaController {
             header('Location: /login');
         }
         
+        $alertas = [];
 
         $cartela = new Cartela;
 
@@ -42,17 +42,24 @@ class CartelaController {
             $cartela->sincronizar($_POST);
 
 
-            // Guardar en la BD
-            $resultado = $cartela->guardar(); 
+            //validamos
+            $alertas = $cartela->validar();
+
+            if(empty($alertas)) {
+                // Guardar en la BD
+                $resultado = $cartela->guardar(); 
+            }
 
             if($resultado) {
                 header('Location: /admin/cartela');
             }
             
         }
+
         $router->render('admin/cartela/crear', [
             'titulo' => 'Añadir Noticia',
-            'cartela' => $cartela
+            'cartela' => $cartela,
+            'alertas' => $alertas
         ]);
     }
 
@@ -64,6 +71,8 @@ class CartelaController {
             header('Location: /login');
         }
         
+
+        $alertas = [];
 
         $id = $_GET['id'];
         $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -87,7 +96,14 @@ class CartelaController {
         
             $cartela->sincronizar($_POST);
 
-            $resultado = $cartela->guardar();
+
+            //validamos
+            $alertas = $cartela->validar();
+
+            if(empty($alertas)) {
+
+                $resultado = $cartela->guardar();
+            }
 
             if($resultado) {
                 header('Location: /admin/cartela');
@@ -97,7 +113,8 @@ class CartelaController {
 
         $router->render('admin/cartela/editar', [
             'titulo' => 'Actualizar Noticia',
-            'cartela' => $cartela
+            'cartela' => $cartela,
+            'alertas' => $alertas
         ]);
     }
 

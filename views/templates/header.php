@@ -21,7 +21,7 @@
             <a href="#/releases" id="boton2">Referencias</a>
             <a href="#/family" id="boton4">Family</a>
             <a href="#/cult" id="boton3">Cult</a>
-            <a href="/radio" id="boton2"> Prinzedom Radio &#8599; </a>
+            <a href="/pzrradio" id="boton2"> Prinzedom Radio &#8599; </a>
             
             
 

@@ -68,7 +68,7 @@ class RadioController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('png', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('jpg', 80);
                 $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
@@ -86,7 +86,7 @@ class RadioController {
              if(empty($alertas)) {
 
                 // Guardar las imagenes
-                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                 $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
 
                 // Guardar en la BD
@@ -101,7 +101,6 @@ class RadioController {
             'titulo' => 'Crear Programa',
             'alertas' => $alertas,
             'radio' => $radio,
-            'redes' => json_decode($radio->redes)
         ]);
     }
 
@@ -148,7 +147,7 @@ class RadioController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('png', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('jpg', 80);
                 $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
@@ -158,7 +157,6 @@ class RadioController {
                 $_POST['imagen'] = $radio->imagen_actual;
             }
 
-            $_POST['redes'] = json_encode( $_POST['redes'], JSON_UNESCAPED_SLASHES );    
 
             $radio->sincronizar($_POST);
 
@@ -166,7 +164,7 @@ class RadioController {
 
             if(empty($alertas)) {
                 if(isset($nombre_imagen)) {
-                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                     $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
                 }
                 $resultado = $radio->guardar();
@@ -181,7 +179,6 @@ class RadioController {
             'titulo' => 'Actualizar Programa',
             'alertas' => $alertas,
             'radio' => $radio,
-            'redes' => json_decode($radio->redes)
         ]);
     }
 

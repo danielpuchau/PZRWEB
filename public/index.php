@@ -95,7 +95,7 @@ $router->post('/admin/cartela/eliminar', [CartelaController::class, 'eliminar'])
 
 
 //vistaRadio
-$router->get('/radio', [ApiRadio::class, 'index']);
+$router->get('/pzrradio', [ApiRadio::class, 'index']);
 
 
 

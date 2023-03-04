@@ -15,6 +15,6 @@
     <form method="POST" enctype="multipart/form-data" class="formulario">
         <?php include_once __DIR__ . '/formulario.php'; ?>
 
-        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Actualizar Artista">
+        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Actualizar Release">
     </form>
 </div>

@@ -2,6 +2,18 @@
     <legend class="formulario__legend">Información Programa</legend>
 
     <div class="formulario__campo">
+        <label for="referencia" class="formulario__label">referencia</label>
+        <input
+            type="text"
+            class="formulario__input"
+            id="referencia"
+            name="referencia"
+            placeholder="referencia Programa"
+            value="<?php echo $radio->referencia ?? ''; ?>"
+        >
+    </div>
+
+    <div class="formulario__campo">
         <label for="titulo" class="formulario__label">titulo</label>
         <input
             type="text"
@@ -52,8 +64,8 @@
         <div class="formulario__imagen">
             <picture>
                 <source srcset="<?php echo $_ENV['HOST'] . '/img/radio/' . $radio->imagen; ?>.webp" type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/radio/' . $radio->imagen; ?>.png" type="image/png">
-                <img src="<?php echo $_ENV['HOST'] . '/img/radio/' . $radio->imagen; ?>.png" alt="Imagen Programa">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/radio/' . $radio->imagen; ?>.jpg" type="image/jpg">
+                <img src="<?php echo $_ENV['HOST'] . '/img/radio/' . $radio->imagen; ?>.jpg" alt="Imagen Programa">
             </picture>
         </div>
 

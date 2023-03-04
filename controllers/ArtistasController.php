@@ -72,8 +72,8 @@ class ArtistasController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('png', 80);
-                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1500,1500)->encode('jpg', 100);
+                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(1500,1500)->encode('webp', 100);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
 
@@ -91,7 +91,7 @@ class ArtistasController {
              if(empty($alertas)) {
 
                 // Guardar las imagenes
-                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                 $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
 
                 // Guardar en la BD
@@ -152,8 +152,8 @@ class ArtistasController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('png', 80);
-                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1500,1500)->encode('jpg', 100);
+                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(1500,1500)->encode('webp', 100);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
 
@@ -169,7 +169,7 @@ class ArtistasController {
 
             if(empty($alertas)) {
                 if(isset($nombre_imagen)) {
-                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                     $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
                 }
                 $resultado = $artista->guardar();

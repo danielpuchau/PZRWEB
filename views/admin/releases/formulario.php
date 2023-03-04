@@ -109,8 +109,8 @@
         <div class="formulario__imagen">
             <picture>
                 <source srcset="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen; ?>.webp" type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen; ?>.png" type="image/png">
-                <img src="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen; ?>.png" alt="Imagen release">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen; ?>.jpg" type="image/jpg">
+                <img src="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen; ?>.jpg" alt="Imagen release">
             </picture>
         </div>
 
@@ -132,8 +132,8 @@
         <div class="formulario__imagen">
             <picture>
                 <source srcset="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen2; ?>.webp" type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen2; ?>.png" type="image/png">
-                <img src="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen2; ?>.png" alt="Imagen release">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen2; ?>.jpg" type="image/jpg">
+                <img src="<?php echo $_ENV['HOST'] . '/img/releases/' . $release->imagen2; ?>.jpg" alt="Imagen release">
             </picture>
         </div>
 

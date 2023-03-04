@@ -80,8 +80,8 @@ class ReleasesController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('png', 80);
-                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('jpg', 80);
+                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
 
@@ -98,8 +98,8 @@ class ReleasesController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('png', 80);
-                $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
+                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('jpg', 80);
+                $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen2 = md5( uniqid( rand(), true) );
 
@@ -117,10 +117,10 @@ class ReleasesController {
              if(empty($alertas)) {
 
                 // Guardar las imagenes
-                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                 $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
 
-                $imagen_png2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".png" );
+                $imagen_png2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".jpg" );
                 $imagen_webp2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".webp" );
 
                 // Guardar en la BD
@@ -190,7 +190,7 @@ class ReleasesController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('png', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('jpg', 80);
                 $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
@@ -200,6 +200,8 @@ class ReleasesController {
                 $_POST['imagen'] = $release->imagen_actual;
             }
 
+
+            
             if(!empty($_FILES['imagen2']['tmp_name'])) {
                 
                 $carpeta_imagenes = '../public/img/releases';
@@ -209,7 +211,7 @@ class ReleasesController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('png', 80);
+                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('jpg', 80);
                 $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
 
                 $nombre_imagen2 = md5( uniqid( rand(), true) );
@@ -226,10 +228,13 @@ class ReleasesController {
 
             if(empty($alertas)) {
                 if(isset($nombre_imagen)) {
-                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                     $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
-                    $imagen_png2->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
-                    $imagen_web2->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
+                }
+
+                if(isset($nombre_imagen2)) {
+                    $imagen_png2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".jpg" );
+                    $imagen_webp2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".webp" );
                 }
                 $resultado = $release->guardar();
 

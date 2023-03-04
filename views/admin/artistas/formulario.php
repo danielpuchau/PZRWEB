@@ -63,8 +63,8 @@
         <div class="formulario__imagen">
             <picture>
                 <source srcset="<?php echo $_ENV['HOST'] . '/img/artistas/' . $artista->imagen; ?>.webp" type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/artistas/' . $artista->imagen; ?>.png" type="image/png">
-                <img src="<?php echo $_ENV['HOST'] . '/img/artistas/' . $artista->imagen; ?>.png" alt="Imagen Artista">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/artistas/' . $artista->imagen; ?>.jpg" type="image/jpg">
+                <img src="<?php echo $_ENV['HOST'] . '/img/artistas/' . $artista->imagen; ?>.jpg" alt="Imagen Artista">
             </picture>
         </div>
 

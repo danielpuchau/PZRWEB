@@ -62,19 +62,38 @@ class ColaboradoresController {
             // Leer imagen
             if(!empty($_FILES['imagen']['tmp_name'])) {
                 
-                $carpeta_imagenes = '../public/img/colaboradores';
+                $carpeta_imagenes = '../public/img/coronas';
 
                 // Crear la carpeta si no existe
                 if(!is_dir($carpeta_imagenes)) {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('png', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('jpg', 80);
                 $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
 
                 $_POST['imagen'] = $nombre_imagen;
+            } 
+
+
+            // Leer imagen
+            if(!empty($_FILES['imagen2']['tmp_name'])) {
+                
+                $carpeta_imagenes = '../public/img/coronas';
+
+                // Crear la carpeta si no existe
+                if(!is_dir($carpeta_imagenes)) {
+                    mkdir($carpeta_imagenes, 0755, true);
+                }
+
+                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('jpg', 80);
+                $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('webp', 80);
+
+                $nombre_imagen2 = md5( uniqid( rand(), true) );
+
+                $_POST['imagen2'] = $nombre_imagen2;
             } 
 
             //el objeto toma los valores de post
@@ -87,8 +106,10 @@ class ColaboradoresController {
              if(empty($alertas)) {
 
                 // Guardar las imagenes
-                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                 $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
+                $imagen_png2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".jpg" );
+                $imagen_webp2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".webp" );
 
                 // Guardar en la BD
                 $resultado = $colaborador->guardar(); 
@@ -119,7 +140,7 @@ class ColaboradoresController {
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
         if(!$id) {
-            header('Location: /admin/colaboradores');
+            header('Location: /admin/coronas');
         }
 
         $colaborador = colaborador::find($id);
@@ -129,6 +150,7 @@ class ColaboradoresController {
         }
 
         $colaborador->imagen_actual = $colaborador->imagen;
+        $colaborador->imagen_actual2 = $colaborador->imagen2;
 
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -138,16 +160,17 @@ class ColaboradoresController {
             }
             
 
+            //imagen1
             if(!empty($_FILES['imagen']['tmp_name'])) {
                 
-                $carpeta_imagenes = '../public/img/colaboradores';
+                $carpeta_imagenes = '../public/img/coronas';
 
                 // Crear la carpeta si no existe
                 if(!is_dir($carpeta_imagenes)) {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('png', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('jpg', 80);
                 $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
@@ -157,15 +180,50 @@ class ColaboradoresController {
                 $_POST['imagen'] = $colaborador->imagen_actual;
             }
 
+
+            //imagen2
+            if(!empty($_FILES['imagen2']['tmp_name'])) {
+                
+                $carpeta_imagenes = '../public/img/coronas';
+
+                // Crear la carpeta si no existe
+                if(!is_dir($carpeta_imagenes)) {
+                    mkdir($carpeta_imagenes, 0755, true);
+                }
+
+                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('jpg', 80);
+                $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('webp', 80);
+
+                $nombre_imagen2 = md5( uniqid( rand(), true) );
+
+                $_POST['imagen2'] = $nombre_imagen2;
+            } else {
+                $_POST['imagen2'] = $colaborador->imagen_actual2;
+            }
+
+
+
+
+
+
             $colaborador->sincronizar($_POST);
 
             $alertas = $colaborador->validar();
 
             if(empty($alertas)) {
                 if(isset($nombre_imagen)) {
-                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".png" );
+                    $imagen_png->save($carpeta_imagenes . '/' . $nombre_imagen . ".jpg" );
                     $imagen_webp->save($carpeta_imagenes . '/' . $nombre_imagen . ".webp" );
+
+                    
                 }
+
+                if(isset($nombre_imagen2)) {
+                    $imagen_png2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".jpg" );
+                    $imagen_webp2->save($carpeta_imagenes . '/' . $nombre_imagen2 . ".webp" );
+                }
+
+
                 $resultado = $colaborador->guardar();
 
                 if($resultado) {

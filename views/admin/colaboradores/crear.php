@@ -15,6 +15,6 @@
     <form method="POST" action="/admin/colaboradores/crear" enctype="multipart/form-data" class="formulario">
         <?php include_once __DIR__ . '/formulario.php'; ?>
 
-        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Registrar Artista">
+        <input class="formulario__submit formulario__submit--registrar" type="submit" value="Registrar Colaborador">
     </form>
 </div>
