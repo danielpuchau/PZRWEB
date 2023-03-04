@@ -23,6 +23,9 @@
     <div class="loader-wrapper">
         <div class="loader">
             <div class="homeLay loading">
+                <div class="contenedor-imagen">
+                    <img class="image-loader" src="/build/img/LOGO1.jpg" alt="icono menu responsive">
+                </div>
                 <div class="loading-text">
                     <span class="loading-text-words">L</span>
                     <span class="loading-text-words">O</span>

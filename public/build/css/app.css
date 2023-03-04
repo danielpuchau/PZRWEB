@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -665,9 +664,10 @@ h3 {
   color: red;
 }
 .header__contenido {
+  padding-bottom: 3px;
   display: flex;
   cursor: pointer;
-  align-items: center;
+  align-items: flex-end;
   height: 46px;
   padding-left: 10px;
   width: 100%;
@@ -812,12 +812,17 @@ h3 {
 }
 
 .scrolling {
-  padding-left: 400px;
+  padding-left: 20px;
   position: relative;
   -webkit-animation: scroll 60s infinite linear;
   -moz-animation: scroll 60s infinite linear;
   -o-animation: scroll 60s infinite linear;
   animation: scroll 60s infinite linear;
+}
+@media (min-width: 768px) {
+  .scrolling {
+    padding-left: 350px;
+  }
 }
 
 @keyframes scroll {
@@ -906,10 +911,12 @@ h3 {
   } */
 }
 .home__lista {
+  margin-top: 5px;
   border-right: 0;
 }
 @media (min-width: 768px) {
   .home__lista {
+    margin-top: 0;
     border-right: 0px solid black;
   }
 }
@@ -1135,19 +1142,31 @@ h3 {
   width: 5%;
 }
 .releases__icono {
+  right: 5%;
   z-index: 99;
   margin-left: 15px;
   position: fixed;
   margin-top: 5px;
+}
+@media (min-width: 768px) {
+  .releases__icono {
+    left: 0;
+  }
 }
 .releases__icono i:hover {
   color: red;
 }
 .releases__iconoLista {
+  right: 5%;
   z-index: 99;
   margin-left: 15px;
   position: fixed;
   margin-top: 5px;
+}
+@media (min-width: 768px) {
+  .releases__iconoLista {
+    left: 0;
+  }
 }
 .releases__iconoLista i:hover {
   color: red;
@@ -1286,6 +1305,7 @@ h3 {
   max-height: 100px;
 }
 .releaseLista__contenido {
+  width: 75%;
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -1313,10 +1333,15 @@ h3 {
 .releaseLista__texto {
   min-width: 100%;
   display: flex;
+  justify-content: space-between;
   padding-bottom: 5px;
 }
 .releaseLista__texto span {
-  padding: 0 10px 0 5px;
+  /* padding: 0 10px 0 5px; */
+}
+.releaseLista__play {
+  padding-right: 2%;
+  font-size: 1.3rem;
 }
 
 .releasePlaying {
@@ -1448,6 +1473,7 @@ h3 {
   font-size: 1rem;
 }
 .artista__container #arrow-prev {
+  z-index: 99;
   left: 20px;
   font-size: 1.6rem;
   text-shadow: 1px 0px 6px rgba(23, 23, 23, 0.5098039216);
@@ -1458,6 +1484,7 @@ h3 {
   }
 }
 .artista__container #arrow-next {
+  z-index: 99;
   right: 20px;
   font-size: 1.6rem;
   text-shadow: 1px 0px 6px rgba(23, 23, 23, 0.5098039216);
@@ -1580,6 +1607,7 @@ h3 {
   align-items: baseline;
 }
 .artista__titulo-des p {
+  color: red;
   position: fixed;
   cursor: pointer;
   margin: 0;
@@ -1642,6 +1670,16 @@ h3 {
   opacity: 0.6;
 }
 
+@media (orientation: landscape) {
+  .artista__container #arrow-prev {
+    top: 45%;
+  }
+}
+@media (orientation: landscape) {
+  .artista__container #arrow-next {
+    top: 45%;
+  }
+}
 .single__contenedor {
   overflow-y: scroll;
   display: flex;
@@ -1805,9 +1843,16 @@ h3 {
   display: block;
 }
 .single__play {
-  display: none;
+  font-size: 1.3rem;
+  display: block;
   line-height: 2.3;
   margin-left: 5%;
+}
+@media (min-width: 900px) {
+  .single__play {
+    display: none;
+    font-size: 1.4rem;
+  }
 }
 .single__track [data-lil=""] {
   pointer-events: none;
@@ -2054,7 +2099,7 @@ iframe {
 /* .botones-visibles {
     visibility: visible;
 } */
-.radio-active {
+s .radio-active {
   fill: red;
 }
 
@@ -2064,6 +2109,15 @@ iframe {
 
 .reproduciendo-stream {
   fill: red;
+}
+
+.position-1 {
+  display: none;
+}
+@media (min-width: 768px) {
+  .position-1 {
+    display: inline;
+  }
 }
 
 .radio__grid {
@@ -2260,6 +2314,7 @@ button {
       transform: rotate(360deg);
   }
 } */
+/* @import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans); */
 .loading {
   visibility: hidden;
   position: fixed;
@@ -2269,8 +2324,22 @@ button {
   height: 100%;
   background: white;
   z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 65%;
 }
 
+@media (orientation: landscape) {
+  .loading {
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .loading {
+    padding-bottom: 0;
+  }
+}
 .radio.loading {
   visibility: visible;
 }
@@ -2280,12 +2349,8 @@ button {
 }
 
 .loading-text {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   width: 100%;
   height: 100px;
@@ -2296,7 +2361,7 @@ button {
   display: inline-block;
   margin: 0 5px;
   color: black;
-  font-family: "Quattrocento Sans", sans-serif;
+  /* font-family: 'Quattrocento Sans', sans-serif; */
 }
 
 .loading-text span:nth-child(1) {
@@ -2377,6 +2442,29 @@ button {
     filter: blur(4px);
   }
 }
+.contenedor-imagen {
+  text-align: center;
+}
+
+.image-loader {
+  max-width: 30%;
+}
+
+@media (orientation: landscape) {
+  .image-loader {
+    max-width: 25%;
+  }
+}
+@media (min-width: 900px) {
+  .image-loader {
+    max-width: 30%;
+  }
+}
+.contenedor-imagen {
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
 .dashboard {
   height: 100%;
   display: flex;

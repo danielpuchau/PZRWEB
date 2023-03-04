@@ -16,7 +16,7 @@
             </div>
 
             <div class="s-title">
-                <span id="s-title">Prinzedom Soundcloud Player</span><span id="position-l"></span>
+                <span id="s-title">Prinzedom Soundcloud Player</span><span id="position-l" class='position-1'></span>
             </div>
 
             <div class="s-duration">

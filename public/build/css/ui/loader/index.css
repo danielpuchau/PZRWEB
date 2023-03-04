@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
 .container {
   max-width: 550px;
   margin: auto;
@@ -40,6 +39,7 @@ button {
       transform: rotate(360deg);
   }
 } */
+/* @import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans); */
 .loading {
   visibility: hidden;
   position: fixed;
@@ -49,8 +49,22 @@ button {
   height: 100%;
   background: white;
   z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 65%;
 }
 
+@media (orientation: landscape) {
+  .loading {
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .loading {
+    padding-bottom: 0;
+  }
+}
 .radio.loading {
   visibility: visible;
 }
@@ -60,12 +74,8 @@ button {
 }
 
 .loading-text {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
   right: 0;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   width: 100%;
   height: 100px;
@@ -76,7 +86,7 @@ button {
   display: inline-block;
   margin: 0 5px;
   color: black;
-  font-family: "Quattrocento Sans", sans-serif;
+  /* font-family: 'Quattrocento Sans', sans-serif; */
 }
 
 .loading-text span:nth-child(1) {
@@ -156,5 +166,27 @@ button {
   100% {
     filter: blur(4px);
   }
+}
+.contenedor-imagen {
+  text-align: center;
+}
+
+.image-loader {
+  max-width: 30%;
+}
+
+@media (orientation: landscape) {
+  .image-loader {
+    max-width: 25%;
+  }
+}
+@media (min-width: 900px) {
+  .image-loader {
+    max-width: 30%;
+  }
+}
+.contenedor-imagen {
+  filter: blur(2px);
+  opacity: 0.8;
 }
 /*# sourceMappingURL=index.css.map */
