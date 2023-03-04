@@ -47,7 +47,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: white;
   z-index: 9999;
 }
 
@@ -75,7 +75,7 @@ button {
 .loading-text span {
   display: inline-block;
   margin: 0 5px;
-  color: #fff;
+  color: black;
   font-family: "Quattrocento Sans", sans-serif;
 }
 
