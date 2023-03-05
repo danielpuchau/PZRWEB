@@ -36,9 +36,9 @@ class Release extends ActiveRecord {
         if(!$this->titulo) {
             self::$alertas['error'][] = 'El titulo es Obligatorio ';
         }
-        if(!$this->descripcion) {
+        /* if(!$this->descripcion) {
             self::$alertas['error'][] = 'La descripcion es Obligatoria';
-        }
+        } */
         if(!$this->formato_id) {
             self::$alertas['error'][] = 'El Campo Formato es Obligatorio';
         }

@@ -1125,6 +1125,12 @@ h3 {
 .home__movWrap .slider-container {
   height: 45vh;
 }
+.home__canvasImg {
+  width: 80%;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
 
 .releases__table {
   display: none;

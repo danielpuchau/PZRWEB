@@ -47,14 +47,14 @@
 
     widget =  Mixcloud.PlayerWidget(document.getElementById("my-widget-iframeRadio"));
         
-    const programaPlay = document.querySelectorAll('.radio__programa img');
+    const programaPlay = document.querySelectorAll('.radio__imagen');
         programaPlay.forEach(element => {
             element.addEventListener("click", function(){
 
 
 
-                overlayAll = document.querySelectorAll(".radio__overlay");
-                overlayAll.forEach(ovrly => {
+                borrar = document.querySelectorAll(".radio__imagen");
+                borrar.forEach(ovrly => {
                     ovrly.classList.remove('overlay-active');    
                 }); 
 
@@ -70,7 +70,7 @@
                 radioPause.classList.remove('active')
                 
 
-                element.nextElementSibling.classList.add('overlay-active');
+                element.classList.add('overlay-active');
 
                 duracionRadio = document.querySelector('#durationRadio')
                 duracionRadio.textContent = ""; 

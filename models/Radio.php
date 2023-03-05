@@ -18,9 +18,6 @@ class Radio extends ActiveRecord {
     }
 
     public function validar() {
-        if(!$this->titulo) {
-            self::$alertas['error'][] = 'El titulo es Obligatorio';
-        }
         if(!$this->referencia) {
             self::$alertas['error'][] = 'La referencia es Obligatorio';
         }
