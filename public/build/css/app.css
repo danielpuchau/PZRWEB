@@ -2332,6 +2332,24 @@ s .radio-active {
   display: block;
 }
 
+.pagina_404__contenedor {
+  text-align: center;
+}
+.pagina_404__enlace {
+  color: black;
+}
+.pagina_404__imagenCont {
+  text-align: center;
+}
+.pagina_404__imagen {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .pagina_404__imagen {
+    width: 60%;
+  }
+}
+
 .container {
   max-width: 550px;
   margin: auto;

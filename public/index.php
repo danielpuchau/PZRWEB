@@ -15,6 +15,7 @@ use Controllers\CartelaController;
 
 
 use Controllers\IndexController;
+use Controllers\NotFoundController;
 
 use Controllers\ApiArtistas;
 use Controllers\ApiReleases;
@@ -97,6 +98,9 @@ $router->post('/admin/cartela/eliminar', [CartelaController::class, 'eliminar'])
 //vistaRadio
 $router->get('/pzrradio', [ApiRadio::class, 'index']);
 
+//vista404
+$router->get('/404', [NotFoundController::class, 'error']);
+
 
 
 
@@ -109,13 +113,12 @@ $router->get('/api/singleRelease', [ApiSingleRelease::class, 'index']);
 $router->get('/api/colaboradores', [ApiColaboradores::class, 'index']);
 
 
+
  
 //index
 $router->get('/index', [IndexController::class, 'index']);
 
 
-/* //header
-$router->get('/templates/header', [ApiHeader::class, 'index']); */
 
 
 

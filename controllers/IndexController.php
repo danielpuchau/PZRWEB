@@ -6,6 +6,7 @@ use Model\Cartela;
 
 
 class IndexController {
+
     public static function index(Router $router){
 
         $cartelas = Cartela::all();

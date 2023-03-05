@@ -19,4 +19,20 @@ class ApiRadio{
             'programas' => $programas
         ]);
     }
+
+
+
+    public static function index2(Router $router){
+
+        
+        $programas = Radio::all();
+
+         
+
+
+        $router->render('/radio/radio2', [
+            'titulo' => 'Radio',
+            'programas' => $programas
+        ]);
+    }
 }

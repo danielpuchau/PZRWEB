@@ -30,11 +30,22 @@ class Router
         }
 
         if ( $fn ) {
+
             call_user_func($fn, $this);
+
         } else {
-            echo "Página No Encontrada o Ruta no válida";
+
+            if( empty($_SERVER['PATH_INFO'])){
+                header('Location: /index');
+            }else{  
+                header('Location: /404');
+            }
+            
         }
     }
+
+
+
 
     public function render($view, $datos = [])
     {
@@ -65,6 +76,12 @@ class Router
             
             /* include_once __DIR__ . '/views/radio-layout.php'; */
         }
-        
+
+        if(str_contains($url_actual, '/404')) {
+            
+            include_once __DIR__ . '/views/layout.php';
+            
+            /* include_once __DIR__ . '/views/radio-layout.php'; */
+        }
     }
 }
