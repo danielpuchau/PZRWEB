@@ -33,7 +33,7 @@
         window.addEventListener('load',function(){
             setTimeout(() => {
                 loader.classList.remove("radio");
-            }, 4000); 
+            }, 2500); 
             
         });
 
