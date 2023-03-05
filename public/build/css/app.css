@@ -1176,6 +1176,7 @@ h3 {
   margin-left: 15px;
   position: fixed;
   margin-top: 5px;
+  width: 25px;
 }
 @media (min-width: 768px) {
   .releases__icono {

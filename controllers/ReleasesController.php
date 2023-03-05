@@ -190,8 +190,8 @@ class ReleasesController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('jpg', 80);
-                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
+                $imagen_png = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('jpg', 80);
+                $imagen_webp = Image::make($_FILES['imagen']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen = md5( uniqid( rand(), true) );
 
@@ -211,8 +211,8 @@ class ReleasesController {
                     mkdir($carpeta_imagenes, 0755, true);
                 }
 
-                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('jpg', 80);
-                $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(1200,1200)->encode('webp', 80);
+                $imagen_png2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('jpg', 80);
+                $imagen_webp2 = Image::make($_FILES['imagen2']['tmp_name'])->fit(800,800)->encode('webp', 80);
 
                 $nombre_imagen2 = md5( uniqid( rand(), true) );
 
